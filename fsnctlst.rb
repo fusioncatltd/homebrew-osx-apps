@@ -5,20 +5,20 @@
 class Fsnctlst < Formula
   desc "fusioncatalyst CLI is a tool for managing data contracts and AI prompts."
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
     on_intel do
-      url "https://github.com/fusioncatalyst/cli/releases/download/0.0.1/cli_Darwin_x86_64.tar.gz"
-      sha256 "aba29f3497f690a3eaf772ef509344e37a04fe9bdfdb179f5435a2cb489ea751"
+      url "https://github.com/fusioncatalyst/cli/releases/download/0.0.2/cli_Darwin_x86_64.tar.gz"
+      sha256 "d988a29c4f03eda6bb71267426d5a3b1e836491c0217a373268fa4d17a1ed9a7"
 
       def install
         bin.install "fsnctlst"
       end
     end
     on_arm do
-      url "https://github.com/fusioncatalyst/cli/releases/download/0.0.1/cli_Darwin_arm64.tar.gz"
-      sha256 "bf22faf11921745ded64ecd7c52af46a12e193a83dd486eba782ddb6b623650d"
+      url "https://github.com/fusioncatalyst/cli/releases/download/0.0.2/cli_Darwin_arm64.tar.gz"
+      sha256 "cace92016890e1148d3b0a52db7cce4b3a082762eab6c4c1424b41485d58cfe3"
 
       def install
         bin.install "fsnctlst"
@@ -29,8 +29,8 @@ class Fsnctlst < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/fusioncatalyst/cli/releases/download/0.0.1/cli_Linux_x86_64.tar.gz"
-        sha256 "d9356596b9d7502c9e2c06dc7b7995f12ae4035af0618c6c124e9dd6fdd36835"
+        url "https://github.com/fusioncatalyst/cli/releases/download/0.0.2/cli_Linux_x86_64.tar.gz"
+        sha256 "3f2e56eaf93cfc28163c6e2329e77a21707579c6f78873914e87b613a4b8d737"
 
         def install
           bin.install "fsnctlst"
@@ -39,8 +39,8 @@ class Fsnctlst < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/fusioncatalyst/cli/releases/download/0.0.1/cli_Linux_arm64.tar.gz"
-        sha256 "e016dd618e937326ff8d8e27595bb07d6c2bf4ac53d678d02395e444dd63fb73"
+        url "https://github.com/fusioncatalyst/cli/releases/download/0.0.2/cli_Linux_arm64.tar.gz"
+        sha256 "58a96727345ad17ba0e1f258f55f974849e19f5f4ebe67e5d2d98e5f95e3c26f"
 
         def install
           bin.install "fsnctlst"
