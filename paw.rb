@@ -5,20 +5,20 @@
 class Paw < Formula
   desc "paw CLI is an official fusioncat tool for managing data contracts and AI prompts."
   homepage ""
-  version "0.0.1"
+  version "0.0.2"
 
   on_macos do
-    on_intel do
-      url "https://github.com/fusioncatltd/paw/releases/download/0.0.1/paw_Darwin_x86_64.tar.gz"
-      sha256 "0dd41d6ad081810bc15ac3fdc889983d599c159d0eb601d6c21cefd6783a2214"
+    if Hardware::CPU.intel?
+      url "https://github.com/fusioncatltd/paw/releases/download/0.0.2/paw_Darwin_x86_64.tar.gz"
+      sha256 "1d3252837de81317e494090f9ee227c0a37316eb8966bf8379f9a8f0c16ffe46"
 
       def install
         bin.install "paw"
       end
     end
-    on_arm do
-      url "https://github.com/fusioncatltd/paw/releases/download/0.0.1/paw_Darwin_arm64.tar.gz"
-      sha256 "b69603ac4beab277feebe47454c7335507194989de92ed0b1fcf3afc89ce92b1"
+    if Hardware::CPU.arm?
+      url "https://github.com/fusioncatltd/paw/releases/download/0.0.2/paw_Darwin_arm64.tar.gz"
+      sha256 "debfc327fefed7acbfef1b8230eb3de069fe004837073f513179bf170261c150"
 
       def install
         bin.install "paw"
@@ -27,24 +27,18 @@ class Paw < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/fusioncatltd/paw/releases/download/0.0.1/paw_Linux_x86_64.tar.gz"
-        sha256 "eeca2974593826d5fae8d66297e350532aa01ba123f6c92fb8b2726d46883761"
-
-        def install
-          bin.install "paw"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/fusioncatltd/paw/releases/download/0.0.2/paw_Linux_x86_64.tar.gz"
+      sha256 "e008ff771a9e375e8bf5f295be6693ba2a37bb845a04d3c1a4c3eed19df91586"
+      def install
+        bin.install "paw"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/fusioncatltd/paw/releases/download/0.0.1/paw_Linux_arm64.tar.gz"
-        sha256 "07d86b199a5d4837a2bb5655c9cecbbe0a37d62a6646fd04adafb20a28cba0f9"
-
-        def install
-          bin.install "paw"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/fusioncatltd/paw/releases/download/0.0.2/paw_Linux_arm64.tar.gz"
+      sha256 "84f88ca4ef90c8bf1fe2043fadb1f8124be851034fce4c1c796197b2bbe2a634"
+      def install
+        bin.install "paw"
       end
     end
   end
